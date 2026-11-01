@@ -8,7 +8,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-// troca o status de lido / não lido
+// switches the read status
 Book.prototype.toggleRead = function () {
   this.read = !this.read;
 };
@@ -34,29 +34,29 @@ function displayBooks() {
     title.textContent = book.title;
 
     const author = document.createElement("p");
-    author.textContent = "Autor: " + book.author;
+    author.textContent = "Author: " + book.author;
 
     const pages = document.createElement("p");
-    pages.textContent = book.pages + " páginas";
+    pages.textContent = book.pages + " pages";
 
     const status = document.createElement("p");
     status.classList.add("status");
-    status.textContent = book.read ? "Lido" : "Ainda não li";
+    status.textContent = book.read ? "Read" : "Not read yet";
 
     const toggleBtn = document.createElement("button");
     toggleBtn.classList.add("toggle-btn");
-    toggleBtn.textContent = book.read ? "Marcar como não lido" : "Marcar como lido";
+    toggleBtn.textContent = book.read ? "Mark as unread" : "Mark as read";
 
     const removeBtn = document.createElement("button");
     removeBtn.classList.add("remove-btn");
-    removeBtn.textContent = "Remover";
+    removeBtn.textContent = "Remove";
 
     card.append(title, author, pages, status, toggleBtn, removeBtn);
     libraryDiv.appendChild(card);
   });
 }
 
-// um clique no container resolve os botões de todos os cards
+// one click listener on the container handles the buttons of every card
 libraryDiv.addEventListener("click", (e) => {
   const card = e.target.closest(".card");
   if (!card) return;
@@ -103,8 +103,8 @@ form.addEventListener("submit", (e) => {
   dialog.close();
 });
 
-// alguns livros para testar o layout
-addBookToLibrary("Dom Casmurro", "Machado de Assis", 256, true);
-addBookToLibrary("O Hobbit", "J. R. R. Tolkien", 310, false);
-addBookToLibrary("Fundamentos de Matemática Elementar", "Gelson Iezzi", 380, false);
+// a few books to test the layout
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
+addBookToLibrary("The Hobbit", "J. R. R. Tolkien", 310, false);
+addBookToLibrary("Calculus", "James Stewart", 1368, false);
 displayBooks();

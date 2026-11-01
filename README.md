@@ -1,26 +1,26 @@
 # Library
 
-Projeto do [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-library): uma biblioteca pessoal feita com HTML, CSS e JavaScript puro.
+[The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-library) project: a personal library built with plain HTML, CSS and JavaScript.
 
-Demo: https://sergiomeyer23.github.io/odin-library/
+Live demo: https://sergiomeyer23.github.io/odin-library/
 
-## O que dá para fazer
+## Features
 
-- Ver os livros em cards (título, autor, páginas e status de leitura)
-- Adicionar um livro pelo botão "Novo livro", que abre um formulário em `<dialog>`
-- Remover um livro
-- Marcar um livro como lido ou não lido
+- See your books as cards (title, author, pages and read status)
+- Add a book with the "New Book" button, which opens a form in a `<dialog>`
+- Remove a book
+- Mark a book as read or unread
 
-## Como funciona
+## How it works
 
-- Os livros ficam no array `myLibrary`, criados pelo construtor `Book`.
-- Cada livro tem um `id` gerado com `crypto.randomUUID()`. O card guarda esse `id` em um `data-id`, e é por ele que o livro certo é removido ou alterado.
-- `Book.prototype.toggleRead` troca o status de leitura.
-- `displayBooks()` desenha a tela a partir do array, então os dados e a exibição ficam separados.
-- O formulário usa `event.preventDefault()` para não tentar enviar os dados a um servidor.
+- Books are stored in the `myLibrary` array and created by the `Book` constructor.
+- Every book has an `id` generated with `crypto.randomUUID()`. Each card keeps that `id` in a `data-id` attribute, which is how the right book gets removed or updated.
+- `Book.prototype.toggleRead` switches the read status.
+- `displayBooks()` renders the page from the array, so the data and the display stay separate.
+- The form uses `event.preventDefault()` so it doesn't try to send the data to a server.
 
-Os dados não são salvos, então a lista volta ao início quando a página recarrega.
+Nothing is saved, so the list resets when the page reloads.
 
-## Como rodar
+## Running it
 
-Abra o `index.html` no navegador. Não precisa instalar nada.
+Open `index.html` in a browser. There is nothing to install.
